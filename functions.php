@@ -31,6 +31,7 @@ if ( function_exists('register_sidebar') ) {
                     );
     }
 
+
 // Custom Functions
 if(is_admin()){
     require_once($func_path. 'be_functions.php');
