@@ -56,13 +56,16 @@ die ('Please do not load this page directly. Thanks!');
 <input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" style="float:right;margin-top:-4px;padding:2px 5px;" />
 </h3>
 <div class="inside">
-<p>lorem ipsum</p>
+
+
+<textarea style="width: 50%;" rows="5" id="footer_text" name="footer_text"><?php echo get_option('footer_text'); ?></textarea>
+
 </div></div>
 </div>
 
 
 <input type="hidden" name="action" value="update" />
-<input type="hidden" name="page_options" value="" />
+<input type="hidden" name="page_options" value="footer_text" />
 
 
 

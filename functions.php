@@ -27,16 +27,23 @@ if ( function_exists('register_sidebar') ) {
 $func_path = TEMPLATEPATH . '/admin/';
 $assets_path = get_bloginfo('template_directory') . '/admin/assets/';
 
-// Theme Options
-require_once($func_path. 'base.php');
-
 // Custom Functions
 if(is_admin()){
     require_once($func_path. 'be_functions.php');
-        }else{
+
+    // Admin Filters
+    add_filter('favorite_actions', 'custom_favorite_menu');
+
+}else{
     require_once($func_path. 'fe_functions.php');
+
+    // Front-end Filters
+    add_filter('wp_trim_excerpt', 'new_excerpt_more');
+    add_filter('the_content_more_link', 'remove_more_jump_link');
+
 }
 
-// Filters
-add_filter('favorite_actions', 'custom_favorite_menu');
+// Theme Options
+require_once($func_path. 'base.php');
+
 ?>

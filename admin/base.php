@@ -24,6 +24,12 @@ function al_admin_init() {
     add_menu_page($wptheme_name." Options", "Theme Options", 'edit_themes', basename(__FILE__), 'al_admin', $assets_path."images/framework_icon.png", 65);
 }
 
-add_action('admin_menu', "al_admin_init");
+function al_admin_assets() {
+    global $assets_path;
+    echo '<link rel="stylesheet" type="text/css" href="' . $assets_path . 'css/style.css" />' . "\n";
+    echo '<script type="text/javascript" src="' . $assets_path . 'js/scripts.js"></script>' . "\n";
+}
 
+add_action('admin_menu', "al_admin_init");
+add_action('admin_head', 'al_admin_assets');
 ?>
