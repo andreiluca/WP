@@ -6,7 +6,7 @@
 ?>
 <?php
 
-if (!empty($_SERVER['SCRIPT_FILENAME']) && 'fe_functions.php' == basename($_SERVER['SCRIPT_FILENAME']))
+if (!empty($_SERVER['SCRIPT_FILENAME']) && 'front_func.php' == basename($_SERVER['SCRIPT_FILENAME']))
 die ('Please do not load this page directly. Thanks!');
 
 function new_excerpt_more($excerpt) {

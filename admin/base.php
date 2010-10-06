@@ -10,22 +10,24 @@ if (!empty($_SERVER['SCRIPT_FILENAME']) && 'base.php' == basename($_SERVER['SCRI
 die ('Please do not load this page directly. Thanks!');
 
 function al_admin() {
-    global $func_path;
-	if ( $_GET['updated'] ) echo '<div id="message" class="updated fade"><p>Theme options saved.</p></div>';
-    require_once($func_path. 'settings_template.php');
+	if ( $_GET['updated'] ) { echo '<div id="message" class="updated fade"><p>'; _e("Theme options saved.","basic"); echo '</p></div>'; }
+    require_once(AL_ADMINPATH . 'settings_template.php');
 }
 
 function al_admin_init() {
-    global $assets_path, $wptheme_name;
-    add_menu_page($wptheme_name." Options", $wptheme_name." Options", 'edit_themes', basename(__FILE__), 'al_admin', $assets_path."images/framework_icon.png", 65);
+    add_menu_page(AL_THEMENAME . " " . __("Options","basic"), AL_THEMENAME . " " . __("Options","basic"), 'edit_themes', basename(__FILE__), 'al_admin', AL_ASSETSPATH . "images/framework_icon.png", 62);
 }
 
 function al_admin_assets() {
-    global $assets_path;
-    echo '<link rel="stylesheet" type="text/css" href="' . $assets_path . 'css/style.css" />' . "\n";
-    echo '<script type="text/javascript" src="' . $assets_path . 'js/scripts.js"></script>' . "\n";
+    echo '<link rel="stylesheet" type="text/css" href="' . AL_ASSETSPATH . 'css/style.css" />' . "\n";
+    echo '<script type="text/javascript" src="' . AL_ASSETSPATH . 'js/jquery.tools.min.js"></script>' . "\n";
+    echo '<script type="text/javascript" src="' . AL_ASSETSPATH . 'js/scripts.js"></script>' . "\n";
 }
 
 add_action('admin_menu', "al_admin_init");
 add_action('admin_head', 'al_admin_assets');
+
+
+
+
 ?>
