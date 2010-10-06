@@ -26,6 +26,15 @@ function al_admin_assets() {
     echo '<script type="text/javascript" src="' . $assets_path . 'js/scripts.js"></script>' . "\n";
 }
 
+<<<<<<< HEAD
+=======
+function al_admin_assets() {
+    global $assets_path;
+    echo '<link rel="stylesheet" type="text/css" href="' . $assets_path . 'css/style.css" />' . "\n";
+    echo '<script type="text/javascript" src="' . $assets_path . 'js/scripts.js"></script>' . "\n";
+}
+
+>>>>>>> 295d923740edd113c52408844b5c59fe8fc729f0
 add_action('admin_menu', "al_admin_init");
 add_action('admin_head', 'al_admin_assets');
 ?>
