@@ -26,7 +26,6 @@ function al_admin_assets() {
     echo '<script type="text/javascript" src="' . $assets_path . 'js/scripts.js"></script>' . "\n";
 }
 
-
 add_action('admin_menu', "al_admin_init");
 add_action('admin_head', 'al_admin_assets');
 ?>
