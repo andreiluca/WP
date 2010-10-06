@@ -25,16 +25,18 @@ if ( function_exists('register_sidebar') ) {
 
 // Functions Path
 $func_path = TEMPLATEPATH . '/admin/';
+$assets_path = get_bloginfo('template_directory') . '/admin/assets/';
 
 // Theme Options
 require_once($func_path. 'base.php');
 
 // Custom Functions
 if(is_admin()){
-require_once($func_path. 'be_functions.php');
-}else{
-require_once($func_path. 'fe_functions.php');
+    require_once($func_path. 'be_functions.php');
+        }else{
+    require_once($func_path. 'fe_functions.php');
 }
 
+// Filters
 add_filter('favorite_actions', 'custom_favorite_menu');
 ?>
