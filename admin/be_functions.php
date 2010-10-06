@@ -13,7 +13,6 @@ function custom_favorite_menu($actions) {
 
 # Removing #
 //unset($actions['edit-comments.php']);
-//unset($actions['media-new.php']);
 
 # Adding #
 $actions['admin.php?page=base.php'] = array('Theme Settings', 'manage_options');
